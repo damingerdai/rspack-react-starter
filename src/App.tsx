@@ -1,31 +1,22 @@
-import React from "react";
+import * as React from "react";
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import { DatePicker, message } from 'antd';
 import "./App.scss";
 
 function App() {
-	const [count, setCount] = useState(0);
+	const [date, setDate] = useState<any | null>(null);
+	const handleChange = (value) => {
+		message.info(`Selected Date: ${value ? value.format('YYYY-MM-DD') : 'None'}`);
+		setDate(value);
+	  };
 
 	return (
-		<div className="App">
-			<div>
-				<a href="https://reactjs.org" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Rspack + React</h1>
-			<div className="card">
-				<button onClick={() => setCount(count => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Rspack and React logos to learn more
-			</p>
+		<div style={{ width: 400, margin: '100px auto' }}>
+		<DatePicker onChange={handleChange} />
+		<div style={{ marginTop: 16 }}>
+		  Selected Date: {date ? date.format('YYYY-MM-DD') : 'None'}
 		</div>
+	  </div>
 	);
 }
 
