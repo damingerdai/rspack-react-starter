@@ -18,7 +18,18 @@ module.exports = {
 			{
 				test: /\.svg$/,
 				type: "asset"
-			}
+			},
+			{
+				test: /\.sass$/,
+				use: [
+				  {
+					loader: 'sass-loader',
+					options: {
+					},
+				  },
+				],
+				type: 'css',
+			  },
 		]
 	}
 };
