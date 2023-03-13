@@ -20,7 +20,7 @@ module.exports = {
 				type: "asset"
 			},
 			{
-				test: /\.sass$/,
+				test: /\.s[ac]ss$/,
 				use: [
 				  {
 					loader: 'sass-loader',
