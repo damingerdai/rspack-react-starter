@@ -4,7 +4,7 @@
 module.exports = {
 	context: __dirname,
 	entry: {
-		main: "./src/main.jsx"
+		main: "./src/main.tsx"
 	},
 	builtins: {
 		html: [
